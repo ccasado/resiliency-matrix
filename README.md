@@ -9,9 +9,6 @@
 
    Go to http://localhost:9000/ 
 
-### Go to http://localhost:9000/ and you'll see:
-
-    "It works"
 
 ## Code Layout
 
@@ -41,7 +38,10 @@ The directory structure of a generated Revel application:
 ## Add Service
 
    ```
-   curl --header "Content-Type: application/json" --request POST --data '{"name":"Show"}' http://localhost:9000/service
+   curl --header "Content-Type: application/json" \
+   --request POST \
+   --data '{"name":"Show"}' \
+   http://localhost:9000/service
    ```
 
 ## Delete Service
