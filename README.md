@@ -1,11 +1,13 @@
-# Welcome to Revel
-
-A high-productivity web framework for the [Go language](http://www.golang.org/).
+# Resiliency Matrix
 
 
 ### Start the web server:
 
-   revel run myapp
+   ```
+   revel run -a resiliency-matrix
+   ```
+
+   Go to http://localhost:9000/ 
 
 ### Go to http://localhost:9000/ and you'll see:
 
@@ -34,18 +36,21 @@ The directory structure of a generated Revel application:
     tests/            Test suites
 
 
-## API Methods
+### API Methods
 
-Add Service
-curl --header "Content-Type: application/json" --request POST --data '{"name":"Show"}' http://localhost:9000/service
+## Add Service
 
-Delete Service
-curl -X DELETE http://localhost:9000/service/id
+   ```
+   curl --header "Content-Type: application/json" --request POST --data '{"name":"Show"}' http://localhost:9000/service
+   ```
 
+## Delete Service
 
+   ```
+   curl -X DELETE http://localhost:9000/service/id
+   ```
 
-
-## Help
+### Help
 
 * The [Getting Started with Revel](http://revel.github.io/tutorial/gettingstarted.html).
 * The [Revel guides](http://revel.github.io/manual/index.html).
