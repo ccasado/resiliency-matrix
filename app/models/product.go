@@ -11,7 +11,7 @@ type Product struct {
 }
 
 func (product Product) Validate(v *revel.Validation) {
-	v.Check(product.Name, revel.ValidRequired(), revel.ValidMinSize(3), revel.ValidMaxSize(100)).Message("Name must be between 3-100 characters long")
+	v.Check(product.Name, revel.ValidRequired(), revel.ValidMinSize(2), revel.ValidMaxSize(100)).Message("Name must be between 2-100 characters long")
 }
 
 func (product Product) AddProduct() error {

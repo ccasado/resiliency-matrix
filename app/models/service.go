@@ -7,8 +7,7 @@ import (
 
 type Service struct {
 	gorm.Model
-	ServiceId int
-	Name      string `gorm:"type:varchar(100)" json:"name"`
+	Name string `gorm:"type:varchar(100)" json:"name"`
 }
 
 func (service Service) Validate(v *revel.Validation) {

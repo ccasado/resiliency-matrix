@@ -2,65 +2,38 @@
 {{template "header.html" .}}
 
 <header class="jumbotron-fluid" style="background-color:#4eabe9">
-  <div class="container">
-    <div class="row">
-      <h1 style="color:white;">{{.greeting}}</h1>
-      <p class="lead" style="color:white;">This matrix shows the relationship between products and services and a status about availability.</p>
-    </div>
-  </div>
+  {{template "Greeting.html" .}}
 </header>
 
 <div class="container">
   <div class="row">
     <p></p>
-      <table class="table table-sm">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">G1</th>
-            <th scope="col">GE</th>
-            <th scope="col">GShow</th>
-            <th scope="col">Globoplay</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Show</th>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-info">Does not depend</td>
-          </tr>
-          <tr>
-            <th scope="row">Gateway</th>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-info">Does not depend</td>
-          </tr>
-          <tr>
-            <th scope="row">Functions</th>
-            <td class="bg-danger">Unavailable</td>
-            <td class="bg-danger">Unavailable</td>
-            <td class="bg-danger">Unavailable</td>
-            <td class="bg-info">Does not depend</td>
-          </tr>
-          <tr>
-            <th scope="row">Accounts</th>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-success">Available</td>
-            <td class="bg-info">Does not depend</td>
-          </tr>
-          <tr>
-            <th scope="row">Jarvis</th>
-            <td class="bg-info">Does not depend</td>
-            <td class="bg-info">Does not depend</td>
-            <td class="bg-info">Does not depend</td>
-            <td class="bg-success">Available</td>
-          </tr>
-        </tbody>
-      </table>
+      {{if .services}}
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">G1</th>
+              <th scope="col">GE</th>
+              <th scope="col">GShow</th>
+              <th scope="col">Globoplay</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{range .services}}
+            <tr>
+              <th scope="row">{{.Name}}</th>
+              <td class="bg-success">Available</td>
+              <td class="bg-danger">Unavailable</td>
+              <td class="bg-success">Available</td>
+              <td class="bg-info">Does not depend</td>
+            </tr>
+          {{end}}
+          </tbody>
+        </table>
+      {{else}}
+        <p>No more results</p>
+      {{end}}
   </div>
 </div>
 

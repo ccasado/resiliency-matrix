@@ -98,3 +98,13 @@ func (c App) ListServices(page int64, perPage int64) revel.Result {
 	c.Response.Status = 200
 	return c.RenderJSON(data)
 }
+
+func (c App) Index(page int64, perPage int64) revel.Result {
+	services, response := service.ListServices()
+	if response != nil {
+		c.Response.Status = 204
+		return nil
+	}
+	c.Response.Status = 200
+	return c.Render(services)
+}

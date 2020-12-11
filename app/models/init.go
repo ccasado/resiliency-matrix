@@ -22,6 +22,6 @@ func InitDB() {
 		revel.AppLog.Fatal("Could not connect to database with error: " + err.Error())
 	}
 	db.DB()
-	db.AutoMigrate(&Service{})
+	db.AutoMigrate(&Service{}, &Product{})
 	DB = db
 }
