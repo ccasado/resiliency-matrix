@@ -3,8 +3,8 @@
 ### Install GORM
 
 ```
-"gorm.io/driver/mysql"
-"gorm.io/gorm"
+go get -u gorm.io/driver/mysql
+go get -u gorm.io/gorm
 ```
 
 ### Start the web server:
@@ -14,7 +14,7 @@
    ```
 
    Go to http://localhost:9000/ in your browser
-   
+
 
 ## Code Layout
 
