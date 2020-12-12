@@ -1,5 +1,11 @@
 # Resiliency Matrix
 
+### Install GORM
+
+```
+"gorm.io/driver/mysql"
+"gorm.io/gorm"
+```
 
 ### Start the web server:
 
@@ -7,8 +13,8 @@
    revel run -a resiliency-matrix
    ```
 
-   Go to http://localhost:9000/ 
-
+   Go to http://localhost:9000/ in your browser
+   
 
 ## Code Layout
 
@@ -40,7 +46,7 @@ The directory structure of a generated Revel application:
    ```
    curl --header "Content-Type: application/json" \
    --request POST \
-   --data '{"name":"Show"}' \
+   --data '{"name":"ServiceName"}' \
    http://localhost:9000/service
    ```
 
@@ -49,6 +55,24 @@ The directory structure of a generated Revel application:
    ```
    curl -X DELETE http://localhost:9000/service/id
    ```
+
+## Add Product
+
+   ```
+   curl --header "Content-Type: application/json" \
+   --request POST \
+   --data '{"name":"ProductName"}' \
+   http://localhost:9000/product
+   ```
+
+## Delete Product
+
+   ```
+   curl -X DELETE http://localhost:9000/product/id
+   ```
+
+
+
 
 ### Help
 

@@ -1,8 +1,8 @@
 package models
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/revel/revel"
+	"gorm.io/gorm"
 )
 
 type Product struct {
